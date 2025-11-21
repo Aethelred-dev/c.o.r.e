@@ -27,25 +27,27 @@ This diagram illustrates the fundamental architectural split between the legacy 
 ```mermaid
 graph TD
     subgraph "Legacy AI: The Probabilistic Path"
-        direction TD
         A1("User Query") --> B1["Stochastic Text Prediction"];
         B1 --> C1{"Billions of Trained Weights"};
-        style C1 fill:#f9f,stroke:#333,stroke-width:2px
-        C1 -.-> D1[/"Plausible but Unverifiable Output"/];
-        B1 -.-> Note1("Risk: Hallucination & Opacity");
-        style Note1 fill:#ff9999
+        C1 -.-> D1["Plausible but<br/>Unverifiable Output"];
+        B1 -.-> Note1["<b>Risk:</b><br/>Hallucination & Opacity"];
     end
 
     subgraph "C.O.R.E.: The Deterministic Path"
-        direction TD
         A2("User Query") --> B2["Algebraic Computation"];
-        B2 --> C2{"Knowledge Graph & Resonant Manifold"};
-        style C2 fill:#99ccff,stroke:#333,stroke-width:2px
+        B2 --> C2{"Knowledge Graph &<br/>Resonant Manifold"};
         C2 --> B2;
-        B2 --> D2[/"Verifiable, Traceable Answer"/];
-        B2 --> Note2("Guaranteed: Logic & Auditability");
-        style Note2 fill:#99ff99
+        B2 --> D2["Verifiable &<br/>Traceable Answer"];
+        B2 --> Note2["<b>Guaranteed:</b><br/>Logic & Auditability"];
     end
+
+    style C1 fill:#fff0f0,stroke:#c00,stroke-width:2px
+    style D1 fill:#fff0f0,stroke:#c00,stroke-width:1px
+    style Note1 fill:#ffcccc,stroke:#c00,stroke-width:2px
+
+    style C2 fill:#f0f8ff,stroke:#0066cc,stroke-width:2px
+    style D2 fill:#f0f8ff,stroke:#0066cc,stroke-width:1px
+    style Note2 fill:#ccffcc,stroke:#008000,stroke-width:2px
 ```
 
 ## 🚀 The Extinction of "Training": Instant Knowledge Integration
@@ -118,3 +120,4 @@ C.O.R.E. is not an alternative. It is not a component in a hybrid system. **It i
 The entire paradigm of probabilistic AI is a developmental stage we must now transcend. By engineering mechanisms like **Conceptual Gravitation**, we can build systems that develop rich, nuanced understanding without resorting to the flawed and uncontrollable nature of statistical models.
 
 This project is the blueprint for that transition. It is the architecture for building systems that **think**, not just mimic. This is the foundation of true artificial cognition.
+```
