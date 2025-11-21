@@ -4,6 +4,19 @@
 
 ---
 
+> ## A Preamble for Engineers
+>
+> Project C.O.R.E. is only the beginning.
+>
+> It forms the cognitive layer of a much larger system that’s about to go public — a system built to redefine how machines reason, store, and act on information.
+>
+> No names. No secrets.
+> Just a simple truth:
+>
+> **A new architecture is coming, and it will change everything.**
+
+---
+
 ## 📌 The Thesis: Ending the Era of Probabilistic AI
 
 The current paradigm of artificial intelligence, dominated by Large Language Models (LLMs), is an architectural dead end. It is built on a foundation of statistical correlation—a sophisticated mimicry engine that predicts plausible text without genuine understanding. This architecture is fundamentally incapable of true reasoning, making flaws like hallucination, opacity, and massive inefficiency permanent features, not bugs to be fixed.
