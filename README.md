@@ -26,32 +26,24 @@ This diagram illustrates the fundamental architectural split between the legacy 
 
 ```mermaid
 graph TD
-    subgraph Legend
-        direction LR
-        A((Start/End))
-        B[Process]
-        C{Data/State}
-        D[/Output/]
-    end
-
-    subgraph Legacy AI: The Probabilistic Path
+    subgraph "Legacy AI: The Probabilistic Path"
         direction TD
-        A1(User Query) --> B1[Stochastic Text Prediction];
-        B1 --> C1{Billions of Trained Weights};
+        A1("User Query") --> B1["Stochastic Text Prediction"];
+        B1 --> C1{"Billions of Trained Weights"};
         style C1 fill:#f9f,stroke:#333,stroke-width:2px
-        C1 -.-> D1[/Plausible but Unverifiable Output/];
-        B1 -.-> Note1(Risk: Hallucination & Opacity);
+        C1 -.-> D1[/"Plausible but Unverifiable Output"/];
+        B1 -.-> Note1("Risk: Hallucination & Opacity");
         style Note1 fill:#ff9999
     end
 
-    subgraph C.O.R.E.: The Deterministic Path
+    subgraph "C.O.R.E.: The Deterministic Path"
         direction TD
-        A2(User Query) --> B2[Algebraic Computation];
-        B2 --> C2{Knowledge Graph & Resonant Manifold};
+        A2("User Query") --> B2["Algebraic Computation"];
+        B2 --> C2{"Knowledge Graph & Resonant Manifold"};
         style C2 fill:#99ccff,stroke:#333,stroke-width:2px
         C2 --> B2;
-        B2 --> D2[/Verifiable, Traceable Answer/];
-        B2 --> Note2(Guaranteed: Logic & Auditability);
+        B2 --> D2[/"Verifiable, Traceable Answer"/];
+        B2 --> Note2("Guaranteed: Logic & Auditability");
         style Note2 fill:#99ff99
     end
 ```
@@ -126,4 +118,3 @@ C.O.R.E. is not an alternative. It is not a component in a hybrid system. **It i
 The entire paradigm of probabilistic AI is a developmental stage we must now transcend. By engineering mechanisms like **Conceptual Gravitation**, we can build systems that develop rich, nuanced understanding without resorting to the flawed and uncontrollable nature of statistical models.
 
 This project is the blueprint for that transition. It is the architecture for building systems that **think**, not just mimic. This is the foundation of true artificial cognition.
-```
