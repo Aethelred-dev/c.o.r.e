@@ -91,19 +91,19 @@ This is the cutting-edge evolution of C.O.R.E., enabling the system to develop n
 -   **Emergent Context:** After asserting "The Sun is a star," "A star emits light," and "A fire emits light," the base vectors for `Sun` and `Fire` will have become slightly more similar. They now share an emergent, unstated property of "light-emitter." The system has developed common sense.
 -   **Resonant Learning:** Over time, this process creates a rich, resonant manifold where concepts are defined not just by their explicit properties but by the entire web of relationships they participate in. This is how C.O.R.E. develops an "intuition" that is fully auditable.
 
-## 🏛️ The Architectural Pillars
+## 🏛️ The Architectural Pillars: The Engine of a True Mind
 
-### 1. The Logic Core (Deterministic)
-The heart of the system. It uses algebraic operations on hypervectors to perform logical inference with mathematical certainty.
+#### 1. The Logic Core (Unchanged)
+The deterministic heart of the system. It uses algebraic operations on hypervectors to perform logical inference with mathematical certainty.
 `Answer = unbind(bind(Paris, bind(is_capital_of, France)), bind(is_capital_of, France))`
 
-### 2. The Resonant Manifold (Evolved)
-The advanced "common sense" layer, powered by **Conceptual Gravitation**. It is no longer a static collection of bundled properties but a dynamic, evolving space. When a fact like `assert(Canary, is_a, Bird)` is integrated, the system doesn't just store the fact. It also applies a slight gravitational pull, modifying the `Canary` vector to become infinitesimally more similar to the `Bird` vector. This allows C.O.R.E. to answer fuzzy queries like "What is a canary *like*?" by finding the concepts closest to it in the manifold.
+#### 2. The Resonant Manifold (Evolved)
+This is the advanced "common sense" layer, powered by **Conceptual Gravitation**. It is no longer a static collection of bundled properties but a dynamic, evolving space. When a fact like `assert(Canary, is_a, Bird)` is integrated, the system doesn't just store the fact. It also applies a slight gravitational pull, modifying the `Canary` vector to become infinitesimally more similar to the `Bird` vector. This allows C.O.R.E. to answer fuzzy queries like "What is a canary *like*?" by finding the concepts closest to it in the manifold.
 
-### 3. The Generative Synthesis Engine (Constructive)
+#### 3. The Generative Synthesis Engine (Unchanged)
 Language is not predicted; it is **constructed**. An intent vector (`Goal ≈ bundle(Poem, Sad, Ocean)`) guides a logical traversal through the Resonant Manifold, which now contains rich, emergent pathways for creativity. The path `Ocean` -> `Vastness` -> `Loneliness` is no longer just a pre-programmed link but an emergent pathway of high conceptual similarity.
 
-## 🧩 Phased Engineering Roadmap
+## 🧩 Phased Engineering Roadmap (Extended)
 
 -   **Phase 1 — Hyperdimensional Kernel:** Core, highly optimized C library for all hypervector operations.
 -   **Phase 2 — Knowledge Ingestion & Ontology:** Build the pipeline to process curated knowledge sources.
@@ -111,20 +111,20 @@ Language is not predicted; it is **constructed**. An intent vector (`Goal ≈ bu
 -   **Phase 4 — Symbolic Query Engine:** Build the API for deterministic fact assertion and retrieval.
 -   **Phase 5 — Recursive Logic & Planning:** Enable multi-step reasoning chains.
 -   **Phase 6 — Natural Language Synthesis:** Implement the deterministic semantic-to-syntactic mapping layer.
--   ⚡ **Phase 7 — The Gravitational Engine:** Implement the core functions for **Conceptual Gravitation**. This engine will modify the base hypervectors during knowledge assertion, transforming the static knowledge base into a Resonant Manifold.
+-   ⚡ **Phase 7 — The Gravitational Engine:** Implement the core functions for Conceptual Gravitation. This engine will modify the base hypervectors during knowledge assertion, transforming the static knowledge base into a Resonant Manifold.
 
-## ⚖️ C.O.R.E. vs. Transformers: An Architectural Reckoning
+## 📊 C.O.R.E. vs. Transformers: An Extinction-Level Event
 
-| Feature             | Transformer LLMs (The Past)                   | Project C.O.R.E. (The Future)                       |
-| :------------------ | :-------------------------------------------- | :-------------------------------------------------- |
-| **Core Function**   | Stochastic Text Completion                    | **Cognitive Computation**                           |
-| **Reasoning Model** | Probabilistic, Flawed                         | **Deterministic, Verifiable**                       |
-| **Learning Model**  | Offline Batch Training                        | **Online, Real-Time Integration & Gravitation**     |
-| **Knowledge Model** | Static, Entangled "Blob"                      | **Dynamic, Resonant Manifold**                      |
-| **Veracity**        | Hallucination is Inherent                     | **Immune to Hallucination by Design**               |
-| **Explainability**  | Opaque "Black Box"                            | **Transparent & Auditable**                         |
-| **Nuance**          | Emergent but Uncontrollable                   | **Emergent via Auditable Gravitation**              |
-| **Future**          | **Legacy Dead End**                           | **The Next Generation Architecture**                |
+| Feature | Transformer LLMs (The Past) | Project C.O.R.E. (The Future) |
+| :--- | :--- | :--- |
+| **Core Function** | Stochastic Text Completion | **Cognitive Computation** |
+| **Reasoning Model** | Probabilistic, Flawed | **Deterministic, Verifiable** |
+| **Learning Model** | Offline Batch Training | **Online, Real-Time Integration & Gravitation** |
+| **Knowledge Model**| Static, Entangled "Blob" | **Dynamic, Resonant Manifold** |
+| **Veracity** | Hallucination is Inherent | **Immune to Hallucination by Design** |
+| **Explainability** | Opaque "Black Box" | **Transparent & Auditable** |
+| **Nuance** | Emergent but Uncontrollable | **Emergent via Auditable Gravitation** |
+| **Architectural Future**| **Legacy Dead End** | **The Next Generation Architecture** |
 
 ## 🏁 The Only Path Forward
 
@@ -133,4 +133,3 @@ C.O.R.E. is not an alternative. It is not a component in a hybrid system. **It i
 The entire paradigm of probabilistic AI is a developmental stage we must now transcend. By engineering mechanisms like **Conceptual Gravitation**, we can build systems that develop rich, nuanced understanding without resorting to the flawed and uncontrollable nature of statistical models.
 
 This project is the blueprint for that transition. It is the architecture for building systems that **think**, not just mimic. This is the foundation of true artificial cognition.
-```
