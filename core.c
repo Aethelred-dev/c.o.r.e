@@ -1292,3 +1292,76 @@ int main(void) {
 
     return 0;
 }
+
+/**
+ * @brief Retrieves a snapshot of the knowledge base's current statistics.
+ * @author The Continuum Synapse Team (Microsoft)
+ * @date 2024
+ * @param kb A pointer to the initialized CORE_KnowledgeBase.
+ * @param out_stats A pointer to a CORE_Stats structure to be populated.
+ * @return CORE_OK on success, or CORE_ERR_NULL_ARG if kb or out_stats is NULL.
+ * @note This function is thread-safe. It acquires necessary locks to ensure a
+ *       consistent snapshot of the stats, which may introduce a brief pause
+ *       during high-write contention.
+ */
+CORE_Status core_kb_get_stats(CORE_KnowledgeBase* kb, CORE_Stats* out_stats) {
+    // --- Input Validation ---
+    if (!kb || !out_stats) {
+        return CORE_ERR_NULL_ARG;
+    }
+
+    // --- Initialization ---
+    // Zero out the struct to ensure no garbage values are returned.
+    memset(out_stats, 0, sizeof(CORE_Stats));
+
+    // --- Gather Stats Under Lock ---
+    // A consistent snapshot requires careful locking. We start with the broadest
+    // lock to get a stable view of the hash table's structure.
+
+    core_mutex_lock(&kb->resize_lock);
+    size_t current_bucket_count = kb->bucket_count;
+
+    // These stats are protected by the resize_lock.
+    out_stats->concept_count = kb->concept_count;
+    out_stats->concept_capacity = current_bucket_count;
+    out_stats->node_arena_bytes = kb->node_arena->total_bytes;
+    out_stats->hv_arena_bytes = kb->hv_arena->total_bytes;
+    out_stats->relation_arena_bytes = kb->relation_arena->total_bytes;
+
+    // Atomically grab stats from other locked components.
+    // Lock, copy, unlock pattern minimizes lock duration.
+    core_mutex_lock(&kb->assertion_log_lock);
+    out_stats->assertion_count = kb->assertion_count;
+    core_mutex_unlock(&kb->assertion_log_lock);
+
+    if (kb->sim_cache) {
+        core_mutex_lock(&kb->sim_cache->lock);
+        out_stats->sim_cache_hits = kb->sim_cache->hits;
+        out_stats->sim_cache_misses = kb->sim_cache->misses;
+        core_mutex_unlock(&kb->sim_cache->lock);
+    }
+
+    // To count total relations, we must iterate through every bucket. Since we
+    // hold the resize_lock, the bucket array itself is stable. We still need
+    // to lock each bucket individually to safely traverse its linked list.
+    for (size_t i = 0; i < current_bucket_count; ++i) {
+        core_mutex_lock(&kb->bucket_locks[i]);
+        for (ConceptNode* node = kb->buckets[i]; node != NULL; node = node->next) {
+            if (node->is_deleted) {
+                continue;
+            }
+            // Traverse the linked list of relations for this concept.
+            for (RelationEdge* e = node->relations_head; e; e = e->next) {
+                if (e->strength > 0) {
+                    out_stats->total_relations++;
+                }
+            }
+        }
+        core_mutex_unlock(&kb->bucket_locks[i]);
+    }
+
+    // Release the primary lock now that we are done iterating.
+    core_mutex_unlock(&kb->resize_lock);
+
+    return CORE_OK;
+}
